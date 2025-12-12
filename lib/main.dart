@@ -100,6 +100,7 @@ Widget buildRecipeCard(Recipe recipe){
           Image(image: AssetImage(recipe.imgLabel)),
           SizedBox(height: 20.0),
           Text("i am hungry", style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+          
         ],
       ),
     ),
