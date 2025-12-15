@@ -14,25 +14,9 @@ class RecipeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Recipes Calculator'),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple),),
+      home: const MyHomePage(title: 'Uniqlo shop'),
+      
     );
   }
 }
@@ -59,7 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      backgroundColor: const Color.fromARGB(255, 194, 194, 194),
+      appBar: AppBar(title: Text(widget.title),centerTitle: true,backgroundColor: Colors.red, titleTextStyle: TextStyle(fontSize: 30.0,fontWeight: FontWeight.bold),),
       body: SafeArea(child: Container(
               child:ListView.builder(
                 itemBuilder: (BuildContext context, int index){
@@ -87,19 +72,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Widget buildRecipeCard(Recipe recipe){
   return Card(
-    elevation: 2.0,
-    shape: RoundedRectangleBorder( 
-      borderRadius: BorderRadius.circular(10.0)
-      ),
+    elevation: 10.0,
+    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(100.0),),
+    margin: EdgeInsets.all(20.0),
     child: Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         children: <Widget>[
-          Text(recipe.imageUrl),
           SizedBox(height: 20.0),
           Image(image: AssetImage(recipe.imgLabel)),
           SizedBox(height: 20.0),
-          Text("i am hungry", style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+          Text(recipe.imageUrl, style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold)),
+          //Text("i am hungry", style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
           
         ],
       ),

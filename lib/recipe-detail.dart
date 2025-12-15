@@ -10,7 +10,7 @@ class RecipeDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recipe Detail'),
+        title: const Text('Uniqlo shop'),centerTitle: true,backgroundColor: Colors.red, titleTextStyle: TextStyle(fontSize: 30.0,fontWeight: FontWeight.bold)
       ),
       body: Center(
         child: Column(
@@ -23,8 +23,7 @@ class RecipeDetail extends StatelessWidget {
                 fontSize: 24
               ),
             ),
-            SizedBox(height: 20.0),
-            Text(recipe.imagedetail)
+            SizedBox(height: 20.0)
           ],),
       ),
     );
